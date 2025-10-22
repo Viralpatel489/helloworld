@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git branch: static 'main', url: 'https://github.com/Viralpatel489/helloworld.git'
+                git url: 'https://github.com/Viralpatel489/helloworld.git' , branch: 'main'
+                echo 'Building..'
             }
         }
         stage('Test') {
