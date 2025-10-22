@@ -2,10 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('checkout & clean') {
             steps {
+                echo '1. checkout code'
                 git url: 'https://github.com/Viralpatel489/helloworld.git' , branch: 'main'
-                echo 'Building..'
+                echo '2. clean workspace'
+                sh 'mvn clean'                
             }
         }
         stage('Test') {
